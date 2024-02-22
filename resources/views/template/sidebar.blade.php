@@ -44,7 +44,7 @@
                  <li class="sidebar-title">Menu</li>
 
                  <li class="sidebar-item active ">
-                     <a href="index.html" class='sidebar-link'>
+                     <a href="/" class='sidebar-link'>
                          <i class="bi bi-grid-fill"></i>
                          <span>Dashboard</span>
                      </a>
@@ -86,12 +86,12 @@
                      <ul class="submenu ">
 
                          <li class="submenu-item  ">
-                             <a href="form-element-input.html" class="submenu-link">Menu</a>
+                             <a href="menu" class="submenu-link">Menu</a>
 
                          </li>
 
                          <li class="submenu-item  ">
-                             <a href="form-element-input-group.html" class="submenu-link">Jenis</a>
+                             <a href="jenis" class="submenu-link">Jenis</a>
 
                          </li>
 

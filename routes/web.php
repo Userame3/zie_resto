@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\JenisController;
+use App\Http\Controllers\MenuController;
+use App\Models\Menu;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +19,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('template.layout');
 });
-Route::Get('menu', function () {
-    return view('menu.index');
-});
+Route::resource('menu',MenuController::class);
