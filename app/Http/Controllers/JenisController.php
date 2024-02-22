@@ -41,7 +41,6 @@ class JenisController extends Controller
     public function store(JenisRequest $request)
     {
         try {
-
             Jenis::create($request->all()); //query input ke table
             return redirect('jenis')->with('success', 'Data jenis berhasil ditambahkan!');
         } catch (QueryException | Exception | PDOException $error) {

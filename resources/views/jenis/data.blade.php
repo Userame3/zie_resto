@@ -5,25 +5,25 @@
                  <table class="table" id="table1">
                      <thead>
                          <tr>
-                             <th>Name</th>
-                             <th>Email</th>
-                             <th>Phone</th>
-                             <th>City</th>
-                             <th>Status</th>
+                             <th>No</th>
+                             <th>Nama Jenis</th>
+                             <th>Action</th>
                          </tr>
                      </thead>
                      <tbody>
-                         @foreach ($menu as $m)
+                         @foreach ($jenis as $j)
                              <tr>
                                  <td>{{ $i = !isset($i) ? ($i = 1) : ++$i }}</td>
-                                 <td>{{ $m->jenis->jenis_Id }}</td>
-                                 <td>{{ $m->nama_menu }}</td>
-                                 <td>{{ $m->harga }}</td>
-                                 <td>{{ $m->kategori->nama_kategori }}</td>
-                                 <td>{{ $m->image }}</td>
+                                 <td>{{ $j->nama_jenis }}</td>
                                  <td>
-                                     <span class="badge bg-success">Active</span>
+                                     <button class="btn btn-danger">
+                                         <i class="fas fa-trash danger"></i>
+                                     </button>
+                                     <button class="btn btn-success">
+                                         <i class="fas fa-edit"></i>
+                                     </button>
                                  </td>
+
                              </tr>
                          @endforeach
 

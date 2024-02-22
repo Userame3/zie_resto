@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\JenisController;
 use App\Http\Controllers\MenuController;
+use App\Models\Jenis;
 use App\Models\Menu;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,4 @@ Route::get('/', function () {
     return view('template.layout');
 });
 Route::resource('menu',MenuController::class);
+Route::resource('jenis',JenisController::class);
