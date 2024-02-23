@@ -43,7 +43,7 @@
              <ul class="menu">
                  <li class="sidebar-title">Menu</li>
 
-                 <li class="sidebar-item active ">
+                 <li class="sidebar-item {{ Request::is('/') ? 'active bg-gradient-primary' : '' }} ">
                      <a href="/" class='sidebar-link'>
                          <i class="bi bi-grid-fill"></i>
                          <span>Dashboard</span>
@@ -52,7 +52,7 @@
 
                  </li>
 
-                 <li class="sidebar-item  has-sub">
+                 <li class="sidebar-item  has-sub {{ Request::is('transaction') ? 'active bg-gradient-primary' : '' }}">
                      <a href="#" class='sidebar-link'>
                          <i class="bi bi-stack"></i>
                          <span>Kasir</span>
@@ -77,7 +77,8 @@
                  </li>
                  <li class="sidebar-title">Admin</li>
 
-                 <li class="sidebar-item  has-sub">
+                 <li
+                     class="sidebar-item  has-sub {{ Request::is('jenis', 'menu', 'member', 'stok') ? 'active bg-gradient-primary' : '' }}">
                      <a href="#" class='sidebar-link'>
                          <i class="bi bi-hexagon-fill"></i>
                          <span>Modul</span>
@@ -101,7 +102,7 @@
                          </li>
 
                          <li class="submenu-item  ">
-                             <a href="form-element-checkbox.html" class="submenu-link">Stok</a>
+                             <a href="stok" class="submenu-link">Stok</a>
 
                          </li>
 

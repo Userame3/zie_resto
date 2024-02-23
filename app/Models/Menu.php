@@ -10,9 +10,9 @@ class Menu extends Model
     use HasFactory;
 
     protected $table = 'menu';
-    protected $fillable = ['id_jenis', 'nama_menu', 'harga', 'image', 'deskripsi'];
+    protected $fillable = ['jenis_id', 'nama_menu', 'harga', 'image', 'deskripsi'];
 
     public function jenis(){
-        return $this->belongsTo(Jenis::class, 'id_jenis');
+        return $this->belongsTo(Jenis::class, 'jenis_id');
     }
 }

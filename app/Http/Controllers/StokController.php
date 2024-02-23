@@ -13,7 +13,8 @@ class StokController extends Controller
      */
     public function index()
     {
-        //
+        $data['stok'] = Stok::with('menu');
+        return view('stok.index')->with($data);
     }
 
     /**

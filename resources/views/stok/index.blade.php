@@ -10,13 +10,12 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Menu</h3>
+                    <h3>Stok</h3>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-
+                            <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
                         </ol>
                     </nav>
                 </div>
@@ -25,18 +24,19 @@
         <section class="section">
             <div class="card">
                 <div class="card-header">
+                    <h4 class="card-title">Stok</h4>
                     <button type="button" class="btn btn-outline-primary block" data-bs-toggle="modal"
                         data-bs-target="#default">
-                        Tambah Menu
+                        Tambah Stok
                     </button>
                 </div>
                 <div class="card-body">
-                    @include('menu.data')
+                    @include('stok.data')
                 </div>
             </div>
         </section>
     </div>
-    @include('menu.form')
+    @include('stok.form')
     <script src="dist/assets/extensions/jquery/jquery.min.js"></script>
     <script src="dist/assets/extensions/parsleyjs/parsley.min.js"></script>
     <script src="dist/assets/static/js/pages/parsley.js"></script>

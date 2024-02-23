@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Menu;
 use App\Http\Requests\StoreMenuRequest;
 use App\Http\Requests\UpdateMenuRequest;
+use App\Models\Jenis;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class MenuController extends Controller
 {
@@ -13,7 +16,8 @@ class MenuController extends Controller
      */
     public function index()
     {
-        $data['menu'] = Menu::all();
+        $data['menu'] = Menu::with('jenis')->get();
+        $data['jenis'] = Jenis::all();
         return view('menu.index')->with($data);
     }
 
@@ -22,15 +26,23 @@ class MenuController extends Controller
      */
     public function create()
     {
-        //
+    
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMenuRequest $request)
+    public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        $imgay = $request->image;
+        $imgayName = time().'.'.$imgay->getClientOriginalExtension();
+        // Storage::disk()->put('image', $imgay);
+        $imgay->move(public_path('images'),$imgayName);
+        $data['image'] = $imgayName;
+
+        Menu::create($data);
+        return redirect('menu')->with('success','Menu Berhasil Ditambahkan');
     }
 
     /**

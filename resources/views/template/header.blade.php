@@ -15,4 +15,8 @@
     <link rel="stylesheet" href="dist/assets/compiled/css/app.css">
     <link rel="stylesheet" href="dist/assets/compiled/css/app-dark.css">
     <link rel="stylesheet" href="dist/assets/compiled/css/iconly.css">
+    <link rel="stylesheet" href="dist/assets/extensions/filepond/filepond.css">
+    <link rel="stylesheet"
+        href="dist/assets/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.css">
+    <link rel="stylesheet" href="dist/assets/extensions/toastify-js/src/toastify.css">
 </head>

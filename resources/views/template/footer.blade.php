@@ -34,4 +34,21 @@
 <script defer src="https://use.fontawesome.com/releases/v5.15.4/js/fontawesome.js"
     integrity="sha384-dPBGbj4Uoy1OOpM4+aRGfAOc0W37JkROT+3uynUgTHZCHZNMHfGXsmmvYTffZjYO" crossorigin="anonymous">
 </script>
+<!-- Image Plugin -->
+<script src="dist/assets/extensions/filepond-plugin-file-validate-size/filepond-plugin-file-validate-size.min.js">
+</script>
+<script src="dist/assets/extensions/filepond-plugin-file-validate-type/filepond-plugin-file-validate-type.min.js">
+</script>
+<script src="dist/assets/extensions/filepond-plugin-image-crop/filepond-plugin-image-crop.min.js"></script>
+<script
+    src="dist/assets/extensions/filepond-plugin-image-exif-orientation/filepond-plugin-image-exif-orientation.min.js">
+</script>
+<script src="dist/assets/extensions/filepond-plugin-image-filter/filepond-plugin-image-filter.min.js"></script>
+<script src="dist/assets/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
+<script src="dist/assets/extensions/filepond-plugin-image-resize/filepond-plugin-image-resize.min.js"></script>
+<script src="dist/assets/extensions/filepond/filepond.js"></script>
+<script src="dist/assets/extensions/toastify-js/src/toastify.js"></script>
+<script src="dist/assets/static/js/pages/filepond.js"></script>
+<script src="dist/assets/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
+
 @stack('script')

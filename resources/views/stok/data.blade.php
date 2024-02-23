@@ -6,25 +6,18 @@
                      <thead>
                          <tr>
                              <th>No</th>
-                             <th>Jenis</th>
-                             <th>Nama Menu</th>
-                             <th>Harga</th>
-                             <th>Image</th>
-                             <th>Deskripsi</th>
+                             <th>Nama Jenis</th>
+                             <th>Jumlah</th>
                              <th>Action</th>
                          </tr>
                      </thead>
                      <tbody>
-                         @foreach ($menu as $m)
+                         @foreach ($stok as $s)
                              <tr>
                                  <td>{{ $i = !isset($i) ? ($i = 1) : ++$i }}</td>
-                                 <td>{{ $m->jenis->nama_jenis }}</td>
-                                 <td>{{ $m->nama_menu }}</td>
-                                 <td>{{ $m->harga }}</td>
-                                 <td><img width="100px" src="{{ asset('images/' . $m->image) }}" alt=""></td>
-                                 <td>{{ $m->deskripsi }}</td>
+                                 <td>{{ $s->menu->nama_menu }}</td>
+                                 <td>{{ $s->jumlah }}</td>
                                  <td>
-
                                      <button class="btn btn-danger">
                                          <i class="fas fa-trash danger"></i>
                                      </button>
@@ -32,6 +25,7 @@
                                          <i class="fas fa-edit"></i>
                                      </button>
                                  </td>
+
                              </tr>
                          @endforeach
 
