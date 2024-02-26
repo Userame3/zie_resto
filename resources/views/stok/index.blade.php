@@ -40,5 +40,23 @@
     <script src="dist/assets/extensions/jquery/jquery.min.js"></script>
     <script src="dist/assets/extensions/parsleyjs/parsley.min.js"></script>
     <script src="dist/assets/static/js/pages/parsley.js"></script>
-
+    <script>
+        $('.delete-data').click(function(e) {
+            e.preventDefault()
+            const data = $(this).closest('tr').find('td:eq(1)').text()
+            Swal.fire({
+                    title: 'Data akan hilang!',
+                    text: `Apakah penghapusan data ${data} akan dilanjutkan ? `,
+                    icon: 'warning',
+                    showDenyButton: true,
+                    confirmButtonText: 'Ya',
+                    denyButtonText: 'Tidak',
+                    focusConfirm: false
+                })
+                .then((result) => {
+                    if (result.isConfirmed) $(e.target).closest('form').submit()
+                    else swal.close()
+                })
+        })
+    </script>
     @include('template.footer')

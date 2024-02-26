@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Stok;
 use App\Http\Requests\StoreStokRequest;
 use App\Http\Requests\UpdateStokRequest;
+use App\Models\Menu;
 
 class StokController extends Controller
 {
@@ -13,7 +14,9 @@ class StokController extends Controller
      */
     public function index()
     {
-        $data['stok'] = Stok::with('menu');
+        $data['menu'] = Menu::All();
+        $data['stok'] = Stok::with('menu')->get();
+
         return view('stok.index')->with($data);
     }
 
@@ -30,7 +33,8 @@ class StokController extends Controller
      */
     public function store(StoreStokRequest $request)
     {
-        //
+        $stok = Stok::create($request->all());
+        return redirect('stok')->with('Success','Data Stok Berhasil ditambahkan !');
     }
 
     /**
@@ -60,8 +64,9 @@ class StokController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Stok $stok)
+    public function destroy(string $id)
     {
-        //
+        Stok::find($id)->delete();
+        return redirect('stok')->with('success','Data Stok Berhasil di Delete');
     }
 }

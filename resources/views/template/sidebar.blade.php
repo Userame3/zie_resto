@@ -52,7 +52,8 @@
 
                  </li>
 
-                 <li class="sidebar-item  has-sub {{ Request::is('transaction') ? 'active bg-gradient-primary' : '' }}">
+                 <li
+                     class="sidebar-item  has-sub {{ Request::is('transaction', 'member') ? 'active bg-gradient-primary' : '' }}">
                      <a href="#" class='sidebar-link'>
                          <i class="bi bi-stack"></i>
                          <span>Kasir</span>
@@ -63,22 +64,19 @@
                          <li class="submenu-item  ">
                              <a href="component-accordion.html" class="submenu-link">Transaction</a>
                          </li>
-                         <li class="submenu-item  ">
-                             <a href="component-accordion.html" class="submenu-link">Meja</a>
-                         </li>
-                         <li class="submenu-item  ">
-                             <a href="component-accordion.html" class="submenu-link">Transaction</a>
-                         </li>
 
+                         <li class="submenu-item  ">
+                             <a href="member" class="submenu-link">Member</a>
+
+                         </li>
 
                      </ul>
-
 
                  </li>
                  <li class="sidebar-title">Admin</li>
 
                  <li
-                     class="sidebar-item  has-sub {{ Request::is('jenis', 'menu', 'member', 'stok') ? 'active bg-gradient-primary' : '' }}">
+                     class="sidebar-item  has-sub {{ Request::is('jenis', 'menu', 'stok') ? 'active bg-gradient-primary' : '' }}">
                      <a href="#" class='sidebar-link'>
                          <i class="bi bi-hexagon-fill"></i>
                          <span>Modul</span>
@@ -93,11 +91,6 @@
 
                          <li class="submenu-item  ">
                              <a href="jenis" class="submenu-link">Jenis</a>
-
-                         </li>
-
-                         <li class="submenu-item  ">
-                             <a href="form-element-radio.html" class="submenu-link">Member</a>
 
                          </li>
 

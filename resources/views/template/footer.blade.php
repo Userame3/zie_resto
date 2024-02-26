@@ -1,7 +1,7 @@
 <footer>
     <div class="footer clearfix mb-0 text-muted">
         <div class="float-start">
-            <p>2023 &copy; Mazer</p>
+            <p>2024 &copy; Affan</p>
         </div>
         <div class="float-end">
             <p><span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span></p>
@@ -50,5 +50,6 @@
 <script src="dist/assets/extensions/toastify-js/src/toastify.js"></script>
 <script src="dist/assets/static/js/pages/filepond.js"></script>
 <script src="dist/assets/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.min.js"></script>
-
+<!-- Sweet Alert -->
+<script src="dist/js/sweetalert2.all.min.js"></script>
 @stack('script')

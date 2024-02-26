@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\JenisController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\StokController;
 use App\Models\Jenis;
@@ -24,3 +25,4 @@ Route::get('/', function () {
 Route::resource('menu',MenuController::class);
 Route::resource('jenis',JenisController::class);
 Route::resource('stok',StokController::class);
+Route::resource('member',MemberController::class);

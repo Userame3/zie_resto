@@ -10,7 +10,7 @@
         <div class="page-title">
             <div class="row">
                 <div class="col-12 col-md-6 order-md-1 order-last">
-                    <h3>Jenis</h3>
+                    <h3>Member</h3>
                 </div>
                 <div class="col-12 col-md-6 order-md-2 order-first">
                     <nav aria-label="breadcrumb" class="breadcrumb-header float-start float-lg-end">
@@ -27,22 +27,19 @@
                 <div class="card-header">
                     <button type="button" class="btn btn-outline-primary block" data-bs-toggle="modal"
                         data-bs-target="#default">
-                        Tambah Jenis
+                        Tambah Member
                     </button>
                 </div>
                 <div class="card-body">
-                    @include('jenis.data')
+                    @include('member.data')
                 </div>
             </div>
         </section>
     </div>
-    @include('jenis.form')
+    @include('member.form')
     <script src="dist/assets/extensions/jquery/jquery.min.js"></script>
     <script src="dist/assets/extensions/parsleyjs/parsley.min.js"></script>
     <script src="dist/assets/static/js/pages/parsley.js"></script>
-
-    @include('template.footer')
-
     <script>
         $('.delete-data').click(function(e) {
             e.preventDefault()
@@ -62,3 +59,4 @@
                 })
         })
     </script>
+    @include('template.footer')

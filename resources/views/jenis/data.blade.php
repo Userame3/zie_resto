@@ -16,9 +16,14 @@
                                  <td>{{ $i = !isset($i) ? ($i = 1) : ++$i }}</td>
                                  <td>{{ $j->nama_jenis }}</td>
                                  <td>
-                                     <button class="btn btn-danger">
-                                         <i class="fas fa-trash danger"></i>
-                                     </button>
+                                     <form method="post" style="display: inline"
+                                         action="{{ url(request()->segment(1) . '/' . $j->id) }}">
+                                         @method('DELETE')
+                                         @csrf
+                                         <button type="button" title="Delete" class="btn btn-danger delete-data">
+                                             <i class="fas fa-trash danger"></i>
+                                         </button>
+                                     </form>
                                      <button class="btn btn-success">
                                          <i class="fas fa-edit"></i>
                                      </button>

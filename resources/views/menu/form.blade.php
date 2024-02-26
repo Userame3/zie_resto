@@ -55,7 +55,7 @@
                                                  </div>
                                                  <div class="col-12">
                                                      <div class="form-group">
-                                                         <labe class="form-label">Upload Image</labe>
+                                                         <label class="form-label">Upload Image</label>
                                                          <input type="file" name="image"
                                                              class="image-preview-filepond">
                                                      </div>

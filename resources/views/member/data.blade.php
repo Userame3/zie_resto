@@ -6,19 +6,23 @@
                      <thead>
                          <tr>
                              <th>No</th>
-                             <th>Nama Jenis</th>
-                             <th>Jumlah</th>
+                             <th>Nama Member</th>
+                             <th>Email</th>
+                             <th>No Telpon</th>
+                             <th>Alamat</th>
                              <th>Action</th>
                          </tr>
                      </thead>
                      <tbody>
-                         @foreach ($stok as $m)
+                         @foreach ($member as $m)
                              <tr>
                                  <td>{{ $i = !isset($i) ? ($i = 1) : ++$i }}</td>
-                                 <td>{{ $m->menu->nama_menu }}</td>
-                                 <td>{{ $m->jumlah }}</td>
+                                 <td>{{ $m->nama }}</td>
+                                 <td>{{ $m->email }}</td>
+                                 <td>{{ $m->no_tlp }}</td>
+                                 <td>{{ $m->alamat }}</td>
                                  <td>
-                                     <form method="post" style="display: inline"
+                                     <form method="POST" style="display:inline"
                                          action="{{ url(request()->segment(1) . '/' . $m->id) }}">
                                          @method('DELETE')
                                          @csrf

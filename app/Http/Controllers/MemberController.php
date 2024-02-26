@@ -13,7 +13,8 @@ class MemberController extends Controller
      */
     public function index()
     {
-        //
+        $data['member'] = Member::all();
+        return view('member.index')->with($data);
     }
 
     /**
@@ -29,7 +30,8 @@ class MemberController extends Controller
      */
     public function store(StoreMemberRequest $request)
     {
-        //
+        $data = Member::create($request->all());
+        return redirect('member')->with('success','Data Member Berhasil Ditambahkan');
     }
 
     /**
@@ -59,8 +61,10 @@ class MemberController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Member $member)
+    public function destroy($id)
     {
-        //
+        Member::find($id)->delete();
+        return redirect('member')->with('success', 'Data berhasil dihapus!');
+
     }
 }

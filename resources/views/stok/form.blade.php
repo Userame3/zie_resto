@@ -15,16 +15,16 @@
                              <div>
                                  <div class="card-content">
                                      <div class="card-body">
-                                         <form class="form" action="jenis" method="post" data-parsley-validate>
+                                         <form class="form" action="stok" method="post" data-parsley-validate>
                                              @csrf
                                              <div class="row">
                                                  <div class="col-6">
                                                      <div class="form-group mandatory">
-                                                         <label for="nama_menu" class="form-label">Pilih Menu</label>
-                                                         <select class="form-select" id="basicSelect">
-                                                             @foreach ($stok as $s)
-                                                                 <option value="{{ $s->menu->menu_id }}">
-                                                                     {{ $s->menu->nama_menu }} </option>
+                                                         <label for="menu_id" class="form-label">Pilih Menu</label>
+                                                         <select class="form-select" name="menu_id" id="menu_id">
+                                                             @foreach ($menu as $m)
+                                                                 <option value="{{ $m->id }}">
+                                                                     {{ $m->nama_menu }} </option>
                                                              @endforeach
                                                          </select>
                                                      </div>
