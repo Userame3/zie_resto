@@ -71,17 +71,13 @@ class JenisController extends Controller
      */
     public function update(JenisRequest $request, Jenis $jenis)
     {
-        try{
             // Validasi data yang dikirimkan
             $validatedData = $request->validated();
             // $update data kategori
             $jenis->update($validatedData);
             
             return redirect('jenis')->with('success', 'Update data berhasil!');
-        } catch ( \Exception $error) {
-            // Tangani kesalahan jika terjadi error
-            return 'Terjadi kesalahan : ' . $error->getMessage() . $error->getCode();
-        }
+        
     }
 
     /**
@@ -90,11 +86,7 @@ class JenisController extends Controller
     public function destroy(Jenis $jenis, $id)
     {
         // dd($jenis);
-        try {
             $jenis->find($id)->delete();
             return redirect('jenis')->with('success', 'Data berhasil dihapus!');
-        } catch (QueryException | Exception | PDOException  $error) {
-            $this->failResponse($error->getMessage() . $error->getCode());
-        }
     }
 }

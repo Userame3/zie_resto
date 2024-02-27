@@ -1,16 +1,30 @@
-<footer>
-    <div class="footer clearfix mb-0 text-muted">
-        <div class="float-start">
-            <p>2024 &copy; Affan</p>
+@include('template.header')
+@push('style')
+@endpush
+<div class="position-absolute top-50 start-50 translate-middle">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Zie Mart</h4>
         </div>
-        <div class="float-end">
-            <p><span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span></p>
+        <div class="card-body">
+            <form action="/">
+                <div class="form-group position-relative has-icon-left mb-4">
+                    <input type="text" class="form-control form-control-xl" placeholder="Username">
+                    <div class="form-control-icon">
+                        <i class="bi bi-person"></i>
+                    </div>
+                </div>
+                <div class="form-group position-relative has-icon-left mb-1">
+                    <input type="password" class="form-control form-control-xl" placeholder="Password">
+                    <div class="form-control-icon">
+                        <i class="bi bi-shield-lock"></i>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-block btn-lg shadow-lg mt-3">Log in</button>
+            </form>
         </div>
     </div>
-</footer>
 </div>
-@stack('script')
-
 <!-- jQuery -->
 <script src="dist/assets/extensions/jquery/jquery.min.js"></script>
 <script src="dist/assets/extensions/datatables.net/js/jquery.dataTables.min.js"></script>

@@ -4,6 +4,7 @@ use App\Http\Controllers\JenisController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\StokController;
+use App\Http\Controllers\UserController;
 use App\Models\Jenis;
 use App\Models\Menu;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +27,7 @@ Route::resource('menu',MenuController::class);
 Route::resource('jenis',JenisController::class);
 Route::resource('stok',StokController::class);
 Route::resource('member',MemberController::class);
+Route::get('/login',function(){
+    return view('auth.login');
+});
+Route::get('login',[UserController::class,'index'])->name('login');

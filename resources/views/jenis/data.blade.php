@@ -24,7 +24,9 @@
                                              <i class="fas fa-trash danger"></i>
                                          </button>
                                      </form>
-                                     <button class="btn btn-success">
+                                     <button class="btn btn-success" data-bs-toggle="modal"
+                                         data-bs-target="#formJenisModal" data-mode="edit" data-id="{{ $j->id }}"
+                                         data-nama_jenis="{{ $j->nama_jenis }}">
                                          <i class="fas fa-edit"></i>
                                      </button>
                                  </td>

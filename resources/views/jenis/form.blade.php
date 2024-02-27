@@ -1,4 +1,4 @@
- <div class="modal fade text-left" id="default" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
+ <div class="modal fade text-left" id="formJenisModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
      aria-hidden="true">
      <div class="modal-dialog" role="document">
          <div class="modal-content">
@@ -17,8 +17,9 @@
                                      <div class="card-body">
                                          <form class="form" action="jenis" method="post" data-parsley-validate>
                                              @csrf
+                                             <div id="method"></div>
                                              <div class="row">
-                                                 <div class="col-md-6 col-12">
+                                                 <div class="col-md-12 col-12">
                                                      <div class="form-group mandatory">
                                                          <label for="nama_jenis" class="form-label">Nama Jenis</label>
                                                          <input type="text" name="nama_jenis" id="nama_jenis"

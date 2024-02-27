@@ -26,7 +26,7 @@
             <div class="card">
                 <div class="card-header">
                     <button type="button" class="btn btn-outline-primary block" data-bs-toggle="modal"
-                        data-bs-target="#default">
+                        data-bs-target="#formJenisModal">
                         Tambah Jenis
                     </button>
                 </div>
@@ -60,5 +60,25 @@
                     if (result.isConfirmed) $(e.target).closest('form').submit()
                     else swal.close()
                 })
+        })
+        // Function Edit
+        $('#formJenisModal').on('show.bs.modal', function(e) {
+            const btn = $(e.relatedTarget)
+            console.log(btn.data('mode'))
+            const mode = btn.data('mode')
+            const nama_jenis = btn.data('nama_jenis')
+            const id = btn.data('id')
+            const modal = $(this)
+            if (mode == 'edit') {
+                modal.find('#method').html('@method('PATCH')')
+                modal.find('.modal-title').text('Edit Data Jenis')
+                modal.find('#nama_jenis').val(nama_jenis)
+                modal.find('.modal-body form').attr('action', '{{ url('jenis') }}/' + id)
+            } else {
+                modal.find('.modal-title').text('Input Data Jenis')
+                modal.find('#nama_jenis').val('')
+                modal.find('#method').html('')
+                modal.find('.modal-body form').attr('action', '{{ url('jenis') }}')
+            }
         })
     </script>
