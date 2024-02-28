@@ -16,14 +16,9 @@ class JenisController extends Controller
      */
     public function index()
     {
-        try {
-            // Retrieve data jenis with eager loading for categories
-            $jenis = Jenis::get();
-            return view('jenis.index', ['title' => 'Jenis', 'jenis' => $jenis]);
-        } catch (QueryException | Exception | PDOException $error) {
-            // Handle the error gracefully
-            return 'Error: ' . $error->getMessage() . ' Code: ' . $error->getCode();
-    }
+        // Retrieve data jenis with eager loading for categories
+        $data['jenis'] = Jenis::all();
+        return view('jenis.index')->with($data);
     }
 
 
@@ -69,15 +64,14 @@ class JenisController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(JenisRequest $request, Jenis $jenis)
+    public function update(JenisRequest $request, string $id)
     {
-            // Validasi data yang dikirimkan
-            $validatedData = $request->validated();
-            // $update data kategori
-            $jenis->update($validatedData);
-            
-            return redirect('jenis')->with('success', 'Update data berhasil!');
-        
+        // Validasi data yang dikirimkan
+        $validatedData = $request->validated();
+        // $update data jenis
+        Jenis::find($id)->update($validatedData);
+
+        return redirect('jenis')->with('success', 'Update data berhasil!');
     }
 
     /**
@@ -86,7 +80,7 @@ class JenisController extends Controller
     public function destroy(Jenis $jenis, $id)
     {
         // dd($jenis);
-            $jenis->find($id)->delete();
-            return redirect('jenis')->with('success', 'Data berhasil dihapus!');
+        $jenis->find($id)->delete();
+        return redirect('jenis')->with('success', 'Data berhasil dihapus!');
     }
 }
