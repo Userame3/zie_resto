@@ -42,7 +42,6 @@
          <div class="sidebar-menu">
              <ul class="menu">
                  <li class="sidebar-title">Menu</li>
-
                  <li class="sidebar-item {{ Request::is('/') ? 'active bg-gradient-primary' : '' }} ">
                      <a href="/" class='sidebar-link'>
                          <i class="bi bi-grid-fill"></i>
@@ -51,18 +50,16 @@
 
 
                  </li>
-
                  <li
-                     class="sidebar-item  has-sub {{ Request::is('transaction', 'member') ? 'active bg-gradient-primary' : '' }}">
+                     class="sidebar-item  has-sub {{ Request::is('transaksi', 'member') ? 'active bg-gradient-primary' : '' }}">
                      <a href="#" class='sidebar-link'>
                          <i class="bi bi-stack"></i>
                          <span>Kasir</span>
                      </a>
-
                      <ul class="submenu ">
 
                          <li class="submenu-item  ">
-                             <a href="component-accordion.html" class="submenu-link">Transaction</a>
+                             <a href="transaksi" class="submenu-link">Transaction</a>
                          </li>
 
                          <li class="submenu-item  ">

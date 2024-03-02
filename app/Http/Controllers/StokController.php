@@ -33,8 +33,15 @@ class StokController extends Controller
      */
     public function store(StoreStokRequest $request)
     {
-        $stok = Stok::create($request->all());
-        return redirect('stok')->with('Success','Data Stok Berhasil ditambahkan !');
+        $stok = Stok::where('menu_id', $request->menu_id)->get()->first();
+        if (!$stok) {
+            Stok::create($request->all());
+            return redirect('stok')->with('success', 'Data Stok berhasil di tambahkan!');
+        }
+        $stok->jumlah = (int)$stok->jumlah + (int)$request->jumlah;
+        $stok->save();
+
+        return redirect('stok')->with('success', 'Data Stok berhasil di tambahkan!');
     }
 
     /**
@@ -67,6 +74,6 @@ class StokController extends Controller
     public function destroy(string $id)
     {
         Stok::find($id)->delete();
-        return redirect('stok')->with('success','Data Stok Berhasil di Delete');
+        return redirect('stok')->with('success', 'Data Stok Berhasil di Delete');
     }
 }

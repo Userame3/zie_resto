@@ -10,4 +10,9 @@ class Jenis extends Model
     use HasFactory;
     protected $table = "jenis";
     protected $fillable = ['nama_jenis'];
+
+    public function menu()
+    {
+        return $this->hasMany(Menu::class, 'jenis_id', 'id');
+    }
 }

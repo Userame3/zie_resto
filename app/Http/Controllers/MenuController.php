@@ -26,7 +26,6 @@ class MenuController extends Controller
      */
     public function create()
     {
-    
     }
 
     /**
@@ -36,13 +35,13 @@ class MenuController extends Controller
     {
         $data = $request->all();
         $imgay = $request->image;
-        $imgayName = time().'.'.$imgay->getClientOriginalExtension();
+        $imgayName = time() . '.' . $imgay->getClientOriginalExtension();
         // Storage::disk()->put('image', $imgay);
-        $imgay->move(public_path('images'),$imgayName);
+        $imgay->move(public_path('images'), $imgayName);
         $data['image'] = $imgayName;
 
         Menu::create($data);
-        return redirect('menu')->with('success','Menu Berhasil Ditambahkan');
+        return redirect('menu')->with('success', 'Menu Berhasil Ditambahkan');
     }
 
     /**
@@ -72,8 +71,9 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Menu $menu)
+    public function destroy($id)
     {
-        //
+        Menu::find($id)->delete();
+        return redirect('menu')->with('success', 'Data berhasil dihapus!');
     }
 }

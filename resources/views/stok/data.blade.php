@@ -16,12 +16,7 @@
                              <tr>
                                  <td>{{ $i = !isset($i) ? ($i = 1) : ++$i }}</td>
                                  <td>{{ $m->menu->nama_menu }}</td>
-                                 <td>
-                                     @php
-                                         $subTotal = $m->jumlah->sum('jumlah'); // Gantilah 'jumlah' dengan nama kolom subtotal pada DetailTransaksi
-                                     @endphp
-                                     {{ $subtotal }}
-                                 </td>
+                                 <td>{{ $m->jumlah }}</td>
                                  <td>
                                      <form method="post" style="display: inline"
                                          action="{{ url(request()->segment(1) . '/' . $m->id) }}">

@@ -5,6 +5,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\QuantityController;
 use App\Http\Controllers\StokController;
+use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
 
 use Illuminate\Support\Facades\Route;
@@ -31,4 +32,5 @@ Route::resource('quantity', QuantityController::class);
 Route::get('/login', function () {
     return view('auth.login');
 });
+Route::resource('transaksi', TransaksiController::class);
 Route::get('login', [UserController::class, 'index'])->name('login');

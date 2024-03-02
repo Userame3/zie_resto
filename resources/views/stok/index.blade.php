@@ -21,21 +21,22 @@
                 </div>
             </div>
         </div>
-        <section class="section">
-            <div class="card">
-                <div class="card-header">
-                    <h4 class="card-title">Stok</h4>
-                    <button type="button" class="btn btn-outline-primary block" data-bs-toggle="modal"
-                        data-bs-target="#default">
-                        Tambah Stok
-                    </button>
-                </div>
-                <div class="card-body">
-                    @include('stok.data')
-                </div>
-            </div>
-        </section>
     </div>
+    <section class="section">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Stok</h4>
+                <button type="button" class="btn btn-outline-primary block" data-bs-toggle="modal"
+                    data-bs-target="#default">
+                    Tambah Stok
+                </button>
+            </div>
+            <div class="card-body">
+                @include('stok.data')
+            </div>
+        </div>
+    </section>
+
     @include('stok.form')
     <script src="dist/assets/extensions/jquery/jquery.min.js"></script>
     <script src="dist/assets/extensions/parsleyjs/parsley.min.js"></script>

@@ -22,12 +22,16 @@
                                  <td>{{ $m->nama_menu }}</td>
                                  <td>{{ $m->harga }}</td>
                                  <td><img width="100px" src="{{ asset('images/' . $m->image) }}" alt=""></td>
-                                 <td>{{ $m->deskripsi }}</td>
+                                 <td class="text-wrap" style="width: 9rem">{{ $m->deskripsi }}</td>
                                  <td>
-
-                                     <button class="btn btn-danger">
-                                         <i class="fas fa-trash danger"></i>
-                                     </button>
+                                     <form method="post" style="display: inline"
+                                         action="{{ url(request()->segment(1) . '/' . $m->id) }}">
+                                         @method('DELETE')
+                                         @csrf
+                                         <button type="button" title="Delete" class="btn btn-danger delete-data">
+                                             <i class="fas fa-trash danger"></i>
+                                         </button>
+                                     </form>
                                      <button class="btn btn-success">
                                          <i class="fas fa-edit"></i>
                                      </button>

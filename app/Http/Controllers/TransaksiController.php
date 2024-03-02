@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Transaksi;
 use App\Http\Requests\StoreTransaksiRequest;
 use App\Http\Requests\UpdateTransaksiRequest;
+use App\Models\Jenis;
 
 class TransaksiController extends Controller
 {
@@ -13,7 +14,9 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        //
+        $data['jenis'] = Jenis::with(['menu'])->get();
+        $data['transaksi'] = Transaksi::all();
+        return view('transaksi.index')->with($data);
     }
 
     /**
