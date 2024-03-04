@@ -22,23 +22,8 @@
             </div>
         </div>
     </div>
-    <div>
-        <script>
-            function changeJenis(e) {
-                console.log(e.value)
-                $('.jenis').toggleClass('active')
-                $('.jenis.' + e.value).toggleClass('active')
-            }
-        </script>
-        <select name="" id="" onchange="changeJenis(this)" style="pointer: cursor">
-            @foreach ($jenis as $j)
-                <option value="{{ strtolower($j->nama_jenis) }}">{{ $j->nama_jenis }}
-                </option>
-            @endforeach
-        </select>
-    </div>
 
-    <div class="col-md-3" style="position: sticky; left: 100%; top:10%">
+    <div class="col-md-3" style="position: relative; left: 75%;">
         <div class="card">
             <div class="card-header" style="background-color: rgb(20, 85, 189); color:white;">
                 Cart
@@ -64,34 +49,43 @@
     <section class="section" style="position:relative;top: -17rem">
         <div class="container-fluid">
             <div class="row mt-4">
-                <div class="col-md-8" style="overflow: auto;height:50dvh">
+                <div class="col-md-8">
+                    <select class="form-select" onchange="changeJenis(this)" style="pointer: cursor">
+                        @foreach ($jenis as $j)
+                            <option value="{{ strtolower($j->nama_jenis) }}">{{ $j->nama_jenis }}
+                            </option>
+                        @endforeach
+                    </select>
                     @foreach ($jenis as $j)
                         <div
-                            class="card jenis {{ strtolower($j->nama_jenis) }} {{ $loop->index == 0 ? 'active' : '' }}">
+                            class="card jenis  {{ strtolower($j->nama_jenis) }} {{ $loop->index == 0 ? 'active' : 'hide' }}">
                             <div style="background-color: rgb(20, 85, 189); color:white;" class="card-header">
                                 {{ $j->nama_jenis }}
                             </div>
-                            @foreach ($j->menu as $menu)
-                                <div class="card-body">
+                            <br>
+                            <br>
+                            <div class="menu-container-aw flex flex-wrap " style="display:flex;flex-wrap:wrap;gap:2rem">
+                                @foreach ($j->menu as $menu)
                                     <!-- Product List -->
                                     <br>
-                                    <div class="row">
-                                        <div class="col-md-4" style="width:200px;">
-                                            <div class="card text-center" style="background-color:beige;">
-                                                <div>
-                                                    <img class="mt-4 mx-auto d-block" width="100px"
-                                                        src="{{ asset('images/' . $menu->image) }}">
-                                                </div>
-                                                <div>
-                                                    <h5>{{ $menu->nama_menu }}</h5>
-                                                    <p>Rp.{{ $menu->harga }}</p>
-                                                    <button class="btn btn-success">Add to Cart</button>
-                                                </div>
+                                    <div class="col-md-3" style="">
+                                        <div class="card text-center"
+                                            style="background-color:beige;width:200px; height:250px; ">
+                                            <div>
+                                                <img class="mt-4 mx-auto d-block" width="100px"
+                                                    src="{{ asset('images/' . $menu->image) }}">
+                                            </div>
+                                            <div class="h-100 d-flex flex-column pb-2 " style="align-items:center">
+                                                <h5>{{ $menu->nama_menu }}</h5>
+                                                <p>Rp.{{ $menu->harga }}</p>
+                                                <button class="btn btn-success w-75" style="margin-top:auto;">Add to
+                                                    Cart</button>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
+
                         </div>
                     @endforeach
                 </div>
@@ -99,6 +93,16 @@
             </div>
         </div>
     </section>
+    <script>
+        function changeJenis(e) {
+            console.log(e.value)
+            $('.jenis').removeClass('active')
+            $('.jenis').addClass('hide')
+            console.log($('.jenis.' + e.value))
+            $('.jenis.' + e.value).removeClass('hide')
+            $('.jenis.' + e.value).addClass('active')
+        }
+    </script>
 
 
     @include('template.footer')

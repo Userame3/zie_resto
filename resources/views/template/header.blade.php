@@ -22,12 +22,12 @@
         href="dist/assets/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.css">
     <link rel="stylesheet" href="dist/assets/extensions/toastify-js/src/toastify.css">
     <style>
-        .jenis {
-            display: none;
+        .jenis.hide {
+            display: none !important;
         }
 
-        .jenis.active {
-            display: block;
+        .jenis.show {
+            display: block !important;
         }
     </style>
 </head>

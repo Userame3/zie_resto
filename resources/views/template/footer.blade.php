@@ -1,5 +1,5 @@
 <footer>
-    <div class="footer clearfix mb-0 text-muted">
+    <div class="footer mb-0 text-muted">
         <div class="float-start">
             <p>2024 &copy; Affan</p>
         </div>
@@ -8,7 +8,6 @@
         </div>
     </div>
 </footer>
-</div>
 @stack('script')
 
 <!-- jQuery -->
