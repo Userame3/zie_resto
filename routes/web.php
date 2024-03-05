@@ -24,6 +24,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('template.layout');
 });
+
+Route::get('tentang', function () {
+    return view('tentang.index');
+});
+
 Route::resource('menu', MenuController::class);
 Route::resource('jenis', JenisController::class);
 Route::resource('stok', StokController::class);

@@ -64,7 +64,8 @@
                             </div>
                             <br>
                             <br>
-                            <div class="menu-container-aw flex flex-wrap " style="display:flex;flex-wrap:wrap;gap:2rem">
+                            <div class="menu-container-aw flex flex-wrap justify-content-center"
+                                style="display:flex;flex-wrap:wrap;gap:1rem">
                                 @foreach ($j->menu as $menu)
                                     <!-- Product List -->
                                     <br>
