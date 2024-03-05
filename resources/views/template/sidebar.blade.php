@@ -53,7 +53,7 @@
                  <li
                      class="sidebar-item  has-sub {{ Request::is('transaksi', 'member') ? 'active bg-gradient-primary' : '' }}">
                      <a href="#" class='sidebar-link'>
-                         <i class="bi bi-stack"></i>
+                         <i class="bi bi-cart"></i>
                          <span>Kasir</span>
                      </a>
                      <ul class="submenu ">
@@ -71,7 +71,6 @@
 
                  </li>
                  <li class="sidebar-title">Admin</li>
-
                  <li
                      class="sidebar-item  has-sub {{ Request::is('jenis', 'menu', 'stok') ? 'active bg-gradient-primary' : '' }}">
                      <a href="#" class='sidebar-link'>
@@ -103,7 +102,28 @@
 
                      </ul>
                  </li>
+                 <li class="sidebar-title">Try Out Smakzie</li>
 
+                 <li
+                     class="sidebar-item  has-sub {{ Request::is('tentang', 'titipan') ? 'active bg-gradient-primary' : '' }}">
+                     <a href="#" class='sidebar-link'>
+                         <i class="bi bi-stack"></i>
+                         <span>TryOut</span>
+                     </a>
+                     <ul class="submenu ">
+
+                         <li class="submenu-item  ">
+                             <a href="tentang" class="submenu-link">Tentang Kami</a>
+                         </li>
+
+                         <li class="submenu-item  ">
+                             <a href="titipan" class="submenu-link">Produk Titipan</a>
+
+                         </li>
+
+                     </ul>
+
+                 </li>
              </ul>
          </div>
      </div>
