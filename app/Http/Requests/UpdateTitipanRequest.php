@@ -22,7 +22,7 @@ class UpdateTitipanRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nama_produk.required' => 'Nama jenis harus diisi.',
         ];
     }
 }

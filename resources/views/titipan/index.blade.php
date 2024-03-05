@@ -103,5 +103,9 @@
                 // Mengisi nilai pada input harga jual
                 parseFloat($('#harga_jual').val(hargaJual));
             });
+
+            $('td[data-column="stok"]').on('dbclick', function() {
+                console.log($(this))
+            })
         });
     </script>

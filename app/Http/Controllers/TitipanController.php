@@ -56,10 +56,9 @@ class TitipanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTitipanRequest $request, string $id)
+    public function update(UpdateTitipanRequest $request, Titipan $titipan)
     {
-        $validateData = $request->validated();
-        Titipan::find($id)->update($validateData);
+        $titipan->update($request->all());
         return redirect('titipan')->with('success', 'Update Data Berhasil');
     }
 

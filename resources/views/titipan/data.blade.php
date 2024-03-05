@@ -22,11 +22,11 @@
                                  <td>{{ $t->nama_supplier }}</td>
                                  <td>{{ $t->harga_beli }}</td>
                                  <td>{{ $t->harga_jual }}</td>
-                                 <td>{{ $t->stok }}</td>
+                                 <td data-column="stok">{{ $t->stok }}</td>
                                  <td>
                                      <button class="btn btn-success" data-bs-toggle="modal"
-                                         data-bs-target="#formTitipanModal" data-mode="edit" data-id="{{ $t->id }}"
-                                         data-nama_produk="{{ $t->nama_produk }}"
+                                         data-bs-target="#formTitipanModal" data-mode="edit"
+                                         data-id="{{ $t->id }}" data-nama_produk="{{ $t->nama_produk }}"
                                          data-nama_supplier="{{ $t->nama_supplier }}"
                                          data-harga_beli="{{ $t->harga_beli }}" data-harga_jual="{{ $t->harga_jual }}"
                                          data-stok="{{ $t->stok }}">
