@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Titipan extends Model
 {
     use HasFactory;
+    protected $table = 'titipan';
+    protected $guarded  = ['id'];
 }

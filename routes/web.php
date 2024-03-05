@@ -5,6 +5,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\QuantityController;
 use App\Http\Controllers\StokController;
+use App\Http\Controllers\TitipanController;
 use App\Http\Controllers\TransaksiController;
 use App\Http\Controllers\UserController;
 
@@ -28,6 +29,7 @@ Route::get('/', function () {
 Route::get('tentang', function () {
     return view('tentang.index');
 });
+Route::resource('titipan', TitipanController::class);
 
 Route::resource('menu', MenuController::class);
 Route::resource('jenis', JenisController::class);

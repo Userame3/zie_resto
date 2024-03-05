@@ -6,6 +6,8 @@ use App\Models\Titipan;
 use App\Http\Requests\StoreTitipanRequest;
 use App\Http\Requests\UpdateTitipanRequest;
 
+use function PHPUnit\Framework\returnSelf;
+
 class TitipanController extends Controller
 {
     /**
@@ -14,7 +16,7 @@ class TitipanController extends Controller
     public function index()
     {
         $data['titipan'] = Titipan::all();
-        return view('produktitipan.index')->with($data);
+        return view('titipan.index')->with($data);
     }
 
     /**
@@ -30,8 +32,10 @@ class TitipanController extends Controller
      */
     public function store(StoreTitipanRequest $request)
     {
-        //
+        Titipan::create($request->all());
+        return redirect('titipan')->with('success', 'Data Produk Berhasil Ditambahkan!');
     }
+
 
     /**
      * Display the specified resource.
@@ -52,9 +56,11 @@ class TitipanController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateTitipanRequest $request, Titipan $titipan)
+    public function update(UpdateTitipanRequest $request, string $id)
     {
-        //
+        $validateData = $request->validated();
+        Titipan::find($id)->update($validateData);
+        return redirect('titipan')->with('success', 'Update Data Berhasil');
     }
 
     /**
@@ -62,6 +68,7 @@ class TitipanController extends Controller
      */
     public function destroy(Titipan $titipan)
     {
-        //
+        $titipan->delete();
+        return redirect('titipan')->with('success', 'Data Berhasil Di Delete');
     }
 }
