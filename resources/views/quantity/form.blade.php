@@ -15,7 +15,7 @@
                              <div>
                                  <div class="card-content">
                                      <div class="card-body">
-                                         <form class="form" action="stok" method="post" data-parsley-validate>
+                                         <form class="form" action="quantity" method="post" data-parsley-validate>
                                              @csrf
                                              <div class="row">
                                                  <div class="col-6">
@@ -32,8 +32,8 @@
                                                  <div class="col-6">
                                                      <div class="form-group mandatory">
                                                          <label for="jumlah" class="form-label">Jumlah</label>
-                                                         <input type="text" name="jumlah" id="jumlah"
-                                                             class="form-control" placeholder="Jumlah Stok"
+                                                         <input type="number" name="jumlah" id="jumlah"
+                                                             class="form-control" placeholder="Jumlah Quantity"
                                                              name="fname-column" data-parsley-required="true" />
                                                      </div>
                                                  </div>

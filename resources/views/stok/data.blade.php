@@ -18,7 +18,7 @@
                                  <td>{{ $m->menu->nama_menu }}</td>
                                  <td>{{ $m->jumlah }}</td>
                                  <td>
-                                     <form method="post" style="display: inline"
+                                     <form method="post" style="display: inline; pointer:block;"
                                          action="{{ url(request()->segment(1) . '/' . $m->id) }}">
                                          @method('DELETE')
                                          @csrf
@@ -27,7 +27,7 @@
                                          </button>
                                      </form>
 
-                                     <button class="btn btn-success">
+                                     <button class="btn btn-success disable">
                                          <i class="fas fa-edit"></i>
                                      </button>
                                  </td>

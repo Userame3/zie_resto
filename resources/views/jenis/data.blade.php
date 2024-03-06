@@ -29,9 +29,7 @@
                                              <i class="fas fa-trash danger"></i>
                                          </button>
                                      </form>
-
                                  </td>
-
                              </tr>
                          @endforeach
 

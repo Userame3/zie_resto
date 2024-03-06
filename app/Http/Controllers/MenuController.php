@@ -34,11 +34,11 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $imgay = $request->image;
-        $imgayName = time() . '.' . $imgay->getClientOriginalExtension();
-        // Storage::disk()->put('image', $imgay);
-        $imgay->move(public_path('images'), $imgayName);
-        $data['image'] = $imgayName;
+        $img = $request->image;
+        $image = time() . '.' . $img->getClientOriginalExtension();
+        // Storage::disk()->put('image', $img);
+        $img->move(public_path('images'), $image);
+        $data['image'] = $image;
 
         Menu::create($data);
         return redirect('menu')->with('success', 'Menu Berhasil Ditambahkan');

@@ -15,22 +15,22 @@ class UserSeeder extends Seeder
         $user = [
             [
 
-                'nama' => 'Administrator',
+                'nama' => 'Admin',
                 'email' => 'admin@gmail.com',
                 'password' => bcrypt('a'),
                 'level' => 1,
             ],
             [
-                'nama' => 'Kasir1',
-                'email' => 'kasir1@gmail.com',
+                'nama' => 'Kasir',
+                'email' => 'kasir@gmail.com',
                 'password' => bcrypt('a'),
                 'level' => 2
             ],
             [
-                'nama' => 'Kasir2',
-                'email' => 'kasir2@gmail.com',
+                'nama' => 'Owner',
+                'email' => 'owner@gmail.com',
                 'password' => bcrypt('a'),
-                'level' => 2
+                'level' => 3
             ],
         ];
         foreach ($user as $key => $value) {

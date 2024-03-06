@@ -58,5 +58,25 @@
                     else swal.close()
                 })
         })
+        // Function Edit
+        $('#formJenisModal').on('show.bs.modal', function(e) {
+            const btn = $(e.relatedTarget)
+            console.log(btn.data('mode'))
+            const mode = btn.data('mode')
+            const nama_jenis = btn.data('nama_jenis')
+            const id = btn.data('id')
+            const modal = $(this)
+            if (mode == 'edit') {
+                modal.find('#method').html('@method('PATCH')')
+                modal.find('.modal-title').text('Edit Data Quantity')
+                modal.find('#nama_jenis').val(nama_jenis)
+                modal.find('.modal-body form').attr('action', '{{ url('jenis') }}/' + id)
+            } else {
+                modal.find('.modal-title').text('Input Data Quantity')
+                modal.find('#nama_jenis').val('')
+                modal.find('#method').html('')
+                modal.find('.modal-body form').attr('action', '{{ url('jenis') }}')
+            }
+        })
     </script>
     @include('template.footer')

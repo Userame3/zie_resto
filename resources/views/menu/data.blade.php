@@ -32,7 +32,9 @@
                                              <i class="fas fa-trash danger"></i>
                                          </button>
                                      </form>
-                                     <button class="btn btn-success">
+                                     <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#default"
+                                         data-mode="edit" data-id="{{ $m->id }}"
+                                         data-nama_menu="{{ $m->nama_menu }}">
                                          <i class="fas fa-edit"></i>
                                      </button>
                                  </td>

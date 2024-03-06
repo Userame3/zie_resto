@@ -7,7 +7,8 @@ use App\Http\Controllers\QuantityController;
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\TitipanController;
 use App\Http\Controllers\TransaksiController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\HomeController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -22,9 +23,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('template.layout');
-});
+Route::get('/', [HomeController::class, 'Home']);
 
 Route::get('tentang', function () {
     return view('tentang.index');
@@ -36,8 +35,7 @@ Route::resource('jenis', JenisController::class);
 Route::resource('stok', StokController::class);
 Route::resource('member', MemberController::class);
 Route::resource('quantity', QuantityController::class);
-Route::get('/login', function () {
-    return view('auth.login');
-});
+Route::get('login', [AuthController::class, 'login'])->name('login');
+Route::post('/login/cek', [AuthController::class, 'cekLogin'])->name('cekLogin');
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::resource('transaksi', TransaksiController::class);
-Route::get('login', [UserController::class, 'index'])->name('login');

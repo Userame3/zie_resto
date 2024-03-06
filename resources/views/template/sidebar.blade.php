@@ -96,7 +96,7 @@
                          </li>
 
                          <li class="submenu-item  ">
-                             <a href="form-element-textarea.html" class="submenu-link">Quantity</a>
+                             <a href="quantity" class="submenu-link">Quantity</a>
 
                          </li>
 
@@ -122,7 +122,17 @@
                          </li>
 
                      </ul>
-
+                 </li>
+             </ul>
+         </div>
+         <div class="sidebar-footer">
+             <!-- Tombol Logout -->
+             <ul class="menu">
+                 <li class="sidebar-item {{ Request::is('logout') ? 'active bg-gradient-primary' : '' }}">
+                     <a href="{{ route('logout') }}" class='sidebar-link'>
+                         <i class="bi bi-door-closed-fill"></i>
+                         <span>Logout</span>
+                     </a>
                  </li>
              </ul>
          </div>

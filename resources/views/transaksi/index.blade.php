@@ -30,7 +30,7 @@
             </div>
             <div class="card-body">
                 <!-- Cart Items -->
-                <ul class="list-group">
+                <ul class="ordered-list">
                     <li class="list-group-item">Product 1 - $10.00 <span class="float-end"><button
                                 class="btn btn-danger btn-sm">Remove</button></span></li>
                     <!-- Add more cart items as needed -->
@@ -76,10 +76,11 @@
                                                 <img class="mt-4 mx-auto d-block" width="100px"
                                                     src="{{ asset('images/' . $menu->image) }}">
                                             </div>
-                                            <div class="h-100 d-flex flex-column pb-2 " style="align-items:center">
+                                            <div class="h-100 d-flex flex-column pb-2 mb-3 " style="align-items:center">
                                                 <h5>{{ $menu->nama_menu }}</h5>
-                                                <p>Rp.{{ $menu->harga }}</p>
-                                                <button class="btn btn-success w-75" style="margin-top:auto;">Add to
+                                                <p>Rp.{{ number_format($menu->harga, 0, ',', '.') }}</p>
+                                                <button class="menu-item li btn btn-success w-75"
+                                                    style="margin-top:auto;">Add to
                                                     Cart</button>
                                             </div>
                                         </div>
