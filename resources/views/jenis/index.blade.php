@@ -27,16 +27,16 @@
                 <div class="card-header">
                     <button type="button" class="btn btn-outline-primary block" data-bs-toggle="modal"
                         data-bs-target="#formJenisModal">
-                        Tambah Titipan
+                        Tambah Jenis
                     </button>
                 </div>
                 <div class="card-body">
-                    @include('titipan.data')
+                    @include('jenis.data')
                 </div>
             </div>
         </section>
     </div>
-    @include('titipan.form')
+    @include('jenis.form')
     <script src="dist/assets/extensions/jquery/jquery.min.js"></script>
     <script src="dist/assets/extensions/parsleyjs/parsley.min.js"></script>
     <script src="dist/assets/static/js/pages/parsley.js"></script>

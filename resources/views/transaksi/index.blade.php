@@ -71,7 +71,7 @@
                                     <br>
                                     <div class="col-md-3" style="">
                                         <div class="card text-center"
-                                            style="background-color:beige;width:200px; height:250px; ">
+                                            style="background-color:rgb(60, 58, 68);width:200px; height:250px; ">
                                             <div>
                                                 <img class="mt-4 mx-auto d-block" width="100px"
                                                     src="{{ asset('images/' . $menu->image) }}">
