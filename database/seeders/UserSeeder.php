@@ -15,19 +15,19 @@ class UserSeeder extends Seeder
         $user = [
             [
 
-                'nama' => 'Admin',
+                'name' => 'Admin',
                 'email' => 'admin@gmail.com',
                 'password' => bcrypt('a'),
                 'level' => 1,
             ],
             [
-                'nama' => 'Kasir',
+                'name' => 'Kasir',
                 'email' => 'kasir@gmail.com',
                 'password' => bcrypt('a'),
                 'level' => 2
             ],
             [
-                'nama' => 'Owner',
+                'name' => 'Owner',
                 'email' => 'owner@gmail.com',
                 'password' => bcrypt('a'),
                 'level' => 3

@@ -65,11 +65,11 @@
                             <br>
                             <br>
                             <div class="menu-container-aw flex flex-wrap justify-content-center"
-                                style="display:flex;flex-wrap:wrap;gap:1rem">
+                                style="display:flex;flex-wrap:wrap;">
                                 @foreach ($j->menu as $menu)
                                     <!-- Product List -->
                                     <br>
-                                    <div class="col-md-3" style="">
+                                    <div class="col-md-3 m-4" style="">
                                         <div class="card text-center"
                                             style="background-color:rgb(60, 58, 68);width:200px; height:250px; ">
                                             <div>
