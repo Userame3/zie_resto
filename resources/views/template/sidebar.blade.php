@@ -64,9 +64,11 @@
 
                          <li class="submenu-item  ">
                              <a href="member" class="submenu-link">Member</a>
-
                          </li>
 
+                         <li class="submenu-item  ">
+                             <a href="meja" class="submenu-link">Meja</a>
+                         </li>
                      </ul>
 
                  </li>

@@ -31,7 +31,7 @@ class MemberController extends Controller
     public function store(StoreMemberRequest $request)
     {
         $data = Member::create($request->all());
-        return redirect('member')->with('success','Data Member Berhasil Ditambahkan');
+        return redirect('member')->with('success', 'Data Member Berhasil Ditambahkan');
     }
 
     /**
@@ -53,9 +53,13 @@ class MemberController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateMemberRequest $request, Member $member)
+    public function update(UpdateMemberRequest $request, $id)
     {
-        //
+        $validatedData = $request->all();
+        // $update data member
+        Member::find($id)->update($validatedData);
+
+        return redirect('member')->with('success', 'Update data berhasil!');
     }
 
     /**
@@ -65,6 +69,5 @@ class MemberController extends Controller
     {
         Member::find($id)->delete();
         return redirect('member')->with('success', 'Data berhasil dihapus!');
-
     }
 }

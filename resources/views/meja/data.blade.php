@@ -6,33 +6,26 @@
                      <thead>
                          <tr>
                              <th>No</th>
-                             <th>Nama Member</th>
-                             <th>Email</th>
-                             <th>No Telpon</th>
-                             <th>Alamat</th>
+                             <th>Nama Jenis</th>
                              <th>Action</th>
                          </tr>
                      </thead>
                      <tbody>
-                         @foreach ($member as $m)
+                         @foreach ($jenis as $j)
                              <tr>
                                  <td>{{ $i = !isset($i) ? ($i = 1) : ++$i }}</td>
-                                 <td>{{ $m->nama }}</td>
-                                 <td>{{ $m->email }}</td>
-                                 <td>{{ $m->no_tlp }}</td>
-                                 <td>{{ $m->alamat }}</td>
+                                 <td>{{ $j->nama_jenis }}</td>
                                  <td>
                                      <button class="btn btn-success" data-bs-toggle="modal"
-                                         data-bs-target="#formMemberModal" data-mode="edit" data-id="{{ $m->id }}"
-                                         data-nama="{{ $m->nama }}" data-email="{{ $m->email }}"
-                                         data-no_tlp="{{ $m->no_tlp }}" data-alamat="{{ $m->alamat }}">
+                                         data-bs-target="#formJenisModal" data-mode="edit" data-id="{{ $j->id }}"
+                                         data-nama_jenis="{{ $j->nama_jenis }}">
                                          <i class="fas fa-edit"></i>
                                      </button>
-                                     <form method="POST" style="display:inline"
-                                         action="{{ url(request()->segment(1) . '/' . $m->id) }}">
+                                     <form method="post" style="display: inline"
+                                         action="{{ url(request()->segment(1) . '/' . $j->id) }}">
                                          @method('DELETE')
                                          @csrf
-                                         <button class="btn btn-danger delete-data">
+                                         <button type="button" title="Delete" class="btn btn-danger delete-data">
                                              <i class="fas fa-trash danger"></i>
                                          </button>
                                      </form>

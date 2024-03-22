@@ -1,4 +1,4 @@
- <div class="modal fade text-left" id="default" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
+ <div class="modal fade text-left" id="formMemberModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel1"
      aria-hidden="true">
      <div class="modal-dialog" role="document">
          <div class="modal-content">
@@ -17,6 +17,7 @@
                                      <div class="card-body">
                                          <form class="form" action="member" method="post" data-parsley-validate>
                                              @csrf
+                                             <div id="method"></div>
                                              <div class="row">
                                                  <div class="col-md-6 col-12">
                                                      <div class="form-group ">
